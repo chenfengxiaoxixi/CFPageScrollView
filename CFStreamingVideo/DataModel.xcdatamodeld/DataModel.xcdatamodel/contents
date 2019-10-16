@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DisplayData" representedClassName="DisplayData" syncable="YES" codeGenerationType="class">
+        <attribute name="controller" optional="YES" attributeType="String"/>
+        <attribute name="isAllowedEditing" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isNeedToDisplay" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MenuData" representedClassName="MenuData" syncable="YES" codeGenerationType="class">
+        <attribute name="controller" optional="YES" attributeType="String"/>
+        <attribute name="isAllowedEditing" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isNeedToDisplay" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="DisplayData" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="MenuData" positionX="-63" positionY="9" width="128" height="103"/>
+    </elements>
+</model>
