@@ -27,6 +27,8 @@ class DetailController: CFBaseController {
 
         // Do any additional setup after loading the view.
         
+        view.backgroundColor = ThemeBlackColor
+        
         initPlayer()
 
         link = CADisplayLink(target: self, selector: #selector(updateTime))

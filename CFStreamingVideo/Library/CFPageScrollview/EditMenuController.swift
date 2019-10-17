@@ -118,6 +118,7 @@ class EditMenuController: UIViewController {
                 print("das")
             }
             
+            //collectionView增删动画
             collectionView.performBatchUpdates({
 
                 groupDataArray[sender.indexPath.section].remove(at: sender.indexPath.row)

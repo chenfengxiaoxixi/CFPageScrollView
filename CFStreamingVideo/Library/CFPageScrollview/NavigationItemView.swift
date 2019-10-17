@@ -73,10 +73,8 @@ class NavigationItemView: UICollectionView {
             return
         }
         
-        let width: CGFloat = titleWidths[0]
-        
         bottomPoint.backgroundColor = selTextColor
-        bottomPoint.mj_x = width/2 - 4
+        bottomPoint.center.x = titleCentersX[0]
         bottomPoint.isHidden = false
         
         reloadData()
@@ -92,10 +90,8 @@ class NavigationItemView: UICollectionView {
             return
         }
         
-        let width: CGFloat = titleWidths[0]
-        
         bottomPoint.backgroundColor = selTextColor
-        bottomPoint.mj_x = width/2 - 4
+        bottomPoint.center.x = titleCentersX[0]
         bottomPoint.isHidden = false
     }
     

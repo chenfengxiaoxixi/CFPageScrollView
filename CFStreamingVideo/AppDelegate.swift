@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         
+        //开启音视频会话
         try? AVAudioSession.sharedInstance().setCategory(.playback)
         try? AVAudioSession.sharedInstance().setMode(.moviePlayback)
         
@@ -40,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let dataSource: Array<Dictionary>! = getDataSource()
             
             for dic in dataSource {
-                
+                //MenuData这张表存放菜单数据
                 let model: MenuData = CoreDataManager.getEntityAndInsertNewObjectWith(entityName: "MenuData") as! MenuData
 
                 model.title = dic["title"] as? String
@@ -54,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let displayData: Array<Dictionary>! = getDisplayDataSource()
             
             for dic in displayData {
-
+                //MenuData这张表存放显示页面数据
                 let model: DisplayData = CoreDataManager.getEntityAndInsertNewObjectWith(entityName: "DisplayData") as! DisplayData
 
                 model.title = dic["title"] as? String

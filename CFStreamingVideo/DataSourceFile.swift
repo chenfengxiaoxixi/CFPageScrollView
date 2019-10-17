@@ -8,9 +8,8 @@
 
 import Foundation
 
-// MARK: - 首页
+// MARK: - 首页数据
 //isAllowedEditing - 该页面是否允许增加或删除，isNeedToDisplay - 是否需要显示页面
-//isLoad - 是否已经加载在控制器上
 func getDataSource() -> Array<Dictionary<String, Any>> {
     
     return [["title":"精选","controller":"ChildController1","isAllowedEditing":false,"isNeedToDisplay":true],
@@ -37,7 +36,7 @@ func getDisplayDataSource() -> Array<Dictionary<String, Any>> {
     
 }
 
-// MARK: - 热点
+// MARK: - 热点数据
 
 func getHotspotDataSource() -> Array<Dictionary<String, Any>> {
     

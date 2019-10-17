@@ -124,7 +124,7 @@ class CFPageScrollView: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         
         //顶部滑动itemview
         navItemView = NavigationItemView.init(frame: CGRect(x: 0, y: STATUS_AND_NAV_BAR_HEIGHT - 40, width: isDisplayMenu ? view.mj_w - 50 : view.mj_w, height: navItemViewHeight), collectionViewLayout: layout)
@@ -198,9 +198,12 @@ class CFPageScrollView: UIViewController {
             //array[i].isLoad = true
         }
         
+        //let leftEdgeInset: CGFloat = 5
+        
         //通过宽度算出每个cell的x中心坐标，用于bottomPoint执行位移动画
         for i in 0..<titleWidths.count {
-            var x: CGFloat = 0
+            //左边第一个item起始偏移为5
+            var x: CGFloat = 5
             for j in 0...i {
                 
                 if i != j {
@@ -211,15 +214,16 @@ class CFPageScrollView: UIViewController {
                     x = titleWidths[j]/2 + x
                 }
             }
+            
             titleCentersX.append(x)
         }
         
         navItemView.titleWidths = titleWidths
         navItemView.titleCentersX = titleCentersX
         navItemView.reloadNavItemData()
-    
     }
     
+    //重载编辑后的滑动分类页面数据
     func reloadData() {
         
         let oldDataSource: Array<PageDataModel> = array
@@ -308,7 +312,6 @@ class CFPageScrollView: UIViewController {
             }
         }
 
-        
         //移除未使用的childvc
         for vc in children {
             var isExist: Bool = false

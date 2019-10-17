@@ -151,6 +151,7 @@ extension CFHomePageController: PageScrollViewDelegate {
         }
         else
         {
+            //数据不相等时，需要改变显示数据，我这里用coredata模拟了一个逻辑，
             
             let fetchRequest: NSFetchRequest = DisplayData.fetchRequest()
             
