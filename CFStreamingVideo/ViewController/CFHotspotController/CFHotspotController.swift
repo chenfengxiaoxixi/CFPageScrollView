@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CFHotspotController: CFBaseController {
+class CFHotspotController: UIViewController {
 
     var pageView: CFPageScrollView!
     var pageData: Array<PageDataModel>!

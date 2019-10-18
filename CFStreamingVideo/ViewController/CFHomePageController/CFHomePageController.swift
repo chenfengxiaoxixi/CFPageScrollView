@@ -16,7 +16,7 @@ struct PageDataModel: Codable, Equatable {
     var isAllowedEditing: Bool?
 }
 
-class CFHomePageController: CFBaseController {
+class CFHomePageController: UIViewController {
     
     var pageView: CFPageScrollView!
     var preWidth: CGFloat!
@@ -110,21 +110,22 @@ class CFHomePageController: CFBaseController {
     }
     
     func handleMenuData() {
-        var sectionTwoDataArray = Array<PageDataModel>()
+        
+        var sectionTwoArray = Array<PageDataModel>()
 
         for model in dataSource {
 
             if model.isAllowedEditing ?? false
             {
-                sectionTwoDataArray.append(model)
+                sectionTwoArray.append(model)
             }
         }
         
         menuDataSource.append(pageData)//menu里面的第一组数据
-        menuDataSource.append(sectionTwoDataArray)//menu里面的第二组数据，可对该组数据进行分类出2，3，4，5组数据，
+        menuDataSource.append(sectionTwoArray)//menu里面的第二组数据，可对该组数据进行分类出2，3，4等多组数据，
         //例如,内部逻辑已经处理好
-        //menuDataSource.append(dataSource2)
-        //menuDataSource.append(dataSource3)
+        //menuDataSource.append(sectionThreeArray)
+        //menuDataSource.append(sectionFourArray)
     }
 
     
@@ -140,7 +141,7 @@ class CFHomePageController: CFBaseController {
 
 }
 
-// MARK: - PageScrollviewViewDataSource
+// MARK: - PageScrollViewDelegate
 extension CFHomePageController: PageScrollViewDelegate {
 
     func editFinishWith(_ completionData: Array<Any>) {
@@ -151,115 +152,116 @@ extension CFHomePageController: PageScrollViewDelegate {
         }
         else
         {
-            //数据不相等时，需要改变显示数据，我这里用coredata模拟了一个逻辑，
-            
-            let fetchRequest: NSFetchRequest = DisplayData.fetchRequest()
-            
-            let result: Array<DisplayData>? = try? CoreDataManager.viewContext.fetch(fetchRequest)
-            
-            for model in result! {
-
-                CoreDataManager.viewContext.delete(model)
-            }
-            
-            CoreDataManager.saveContext()
-            
-            for dataModel in completionData {
-
-                let model: DisplayData = CoreDataManager.getEntityAndInsertNewObjectWith(entityName: "DisplayData") as! DisplayData
-
-                model.title = (dataModel as! PageDataModel).title
-                model.controller = (dataModel as! PageDataModel).controller
-                model.isNeedToDisplay = (dataModel as! PageDataModel).isNeedToDisplay!
-                model.isAllowedEditing = (dataModel as! PageDataModel).isAllowedEditing!
-
-                CoreDataManager.saveContext()
-            }
-            
-            var newArray: Array<String> = Array()
-            var newPredicateCondition: String = ""
-            
-            for newModel in completionData {
-                var isAdd: Bool = true
-                for pageModel in pageData {
-                    
-                    if (newModel as! PageDataModel).title == pageModel.title  {
-                        isAdd = false
-                    }
-                }
+        //数据改变时，需要重载显示页面，do内的逻辑是我用coredata模拟了一个存取数据的逻辑，如果是网络请求，这部分逻辑提交给后台处理，你只用上传数据，然后reload。
+            do {
+                let fetchRequest: NSFetchRequest = DisplayData.fetchRequest()
                 
-                if isAdd {
-                    newArray.append((newModel as! PageDataModel).title)
-                    
-                    if newPredicateCondition.count == 0 {
-                        newPredicateCondition = "title == %@"
-                    }
-                    else
-                    {
-                       newPredicateCondition = newPredicateCondition + " || title == %@"
-                    }
-                }
-            }
-            
-            if newArray.count > 0 {
+                let result: Array<DisplayData>? = try? CoreDataManager.viewContext.fetch(fetchRequest)
                 
-                let fetchRequest2: NSFetchRequest = MenuData.fetchRequest()
-                fetchRequest2.predicate = NSPredicate(format: newPredicateCondition, argumentArray: newArray)
+                for model in result! {
 
-                let result2: Array<MenuData>? = try? CoreDataManager.viewContext.fetch(fetchRequest2)
-
-                for data in result2! {
-                    
-                    data.isNeedToDisplay = true
+                    CoreDataManager.viewContext.delete(model)
                 }
                 
                 CoreDataManager.saveContext()
-            }
-            
-            var deleteArray: Array<String> = Array()
-            var deletePredicateCondition: String = ""
-            for pageModel in pageData {
-                var isDelete: Bool = true
+                
+                for dataModel in completionData {
+
+                    let model: DisplayData = CoreDataManager.getEntityAndInsertNewObjectWith(entityName: "DisplayData") as! DisplayData
+
+                    model.title = (dataModel as! PageDataModel).title
+                    model.controller = (dataModel as! PageDataModel).controller
+                    model.isNeedToDisplay = (dataModel as! PageDataModel).isNeedToDisplay!
+                    model.isAllowedEditing = (dataModel as! PageDataModel).isAllowedEditing!
+
+                    CoreDataManager.saveContext()
+                }
+                
+                var newArray: Array<String> = Array()
+                var newPredicateCondition: String = ""
+                
                 for newModel in completionData {
+                    var isAdd: Bool = true
+                    for pageModel in pageData {
+                        
+                        if (newModel as! PageDataModel).title == pageModel.title  {
+                            isAdd = false
+                        }
+                    }
                     
-                    if pageModel.title == (newModel as! PageDataModel).title {
-                        isDelete = false
+                    if isAdd {
+                        newArray.append((newModel as! PageDataModel).title)
+                        
+                        if newPredicateCondition.count == 0 {
+                            newPredicateCondition = "title == %@"
+                        }
+                        else
+                        {
+                           newPredicateCondition = newPredicateCondition + " || title == %@"
+                        }
                     }
                 }
                 
-                if isDelete {
-                    deleteArray.append(pageModel.title)
+                if newArray.count > 0 {
                     
-                    if deletePredicateCondition.count == 0 {
-                        deletePredicateCondition = "title == %@"
+                    let fetchRequest2: NSFetchRequest = MenuData.fetchRequest()
+                    fetchRequest2.predicate = NSPredicate(format: newPredicateCondition, argumentArray: newArray)
+
+                    let result2: Array<MenuData>? = try? CoreDataManager.viewContext.fetch(fetchRequest2)
+
+                    for data in result2! {
+                        
+                        data.isNeedToDisplay = true
                     }
-                    else
-                    {
-                       deletePredicateCondition = deletePredicateCondition + " || title == %@"
+                    
+                    CoreDataManager.saveContext()
+                }
+                
+                var deleteArray: Array<String> = Array()
+                var deletePredicateCondition: String = ""
+                for pageModel in pageData {
+                    var isDelete: Bool = true
+                    for newModel in completionData {
+                        
+                        if pageModel.title == (newModel as! PageDataModel).title {
+                            isDelete = false
+                        }
+                    }
+                    
+                    if isDelete {
+                        deleteArray.append(pageModel.title)
+                        
+                        if deletePredicateCondition.count == 0 {
+                            deletePredicateCondition = "title == %@"
+                        }
+                        else
+                        {
+                           deletePredicateCondition = deletePredicateCondition + " || title == %@"
+                        }
                     }
                 }
+                
+                if deleteArray.count > 0 {
+                    let fetchRequest3: NSFetchRequest = MenuData.fetchRequest()
+                    fetchRequest3.predicate = NSPredicate(format: deletePredicateCondition, argumentArray: deleteArray)
+                 
+                    let result3: Array<MenuData>? = try? CoreDataManager.viewContext.fetch(fetchRequest3)
+                    
+                    for data in result3! {
+                        
+                        data.isNeedToDisplay = false
+                    }
+                    
+                    CoreDataManager.saveContext()
+                }
+            
+                print("不相等时，需要跟新数据")
+            
+                pageData = completionData as? Array<PageDataModel>
+            
+                pageView.reloadData()
+            
             }
-            
-            if deleteArray.count > 0 {
-                let fetchRequest3: NSFetchRequest = MenuData.fetchRequest()
-                fetchRequest3.predicate = NSPredicate(format: deletePredicateCondition, argumentArray: deleteArray)
-             
-                let result3: Array<MenuData>? = try? CoreDataManager.viewContext.fetch(fetchRequest3)
-                
-                for data in result3! {
-                    
-                    data.isNeedToDisplay = false
-                }
-                
-                CoreDataManager.saveContext()
-            }
-            
-            print("不相等时，需要跟新数据")
-            
-            pageData = completionData as? Array<PageDataModel>
-            
-            pageView.reloadData()
-            
         }
     }
 

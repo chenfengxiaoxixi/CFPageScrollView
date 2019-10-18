@@ -15,11 +15,11 @@ import UIKit
 
 @objc protocol PageScrollViewDataSource {
     
-    //获取searchview
-    func getSearchViewWith(_ index: Int) -> BaseSearchView
-    
     //获取ScrollView显示数据，数组里面要是PageDataModel
     func getScrollViewData() -> Array<Any>
+    
+    //获取searchview
+    func getSearchViewWith(_ index: Int) -> BaseSearchView
     
     //获取头部主题颜色
     func getNavHeaderThemeColorWith(_ index: Int) -> Dictionary<String, UIColor>
@@ -30,7 +30,7 @@ import UIKit
     //获取菜单显示数据，数组里面要是PageDataModel
     @objc optional func getMenuData() -> Array<Any>
     
-    //获取菜单显示数据
+    //获取菜单分组title
     @objc optional func getMenuSectionTitle() -> Array<String>
     
 }
@@ -534,6 +534,8 @@ extension CFPageScrollView: UIScrollViewDelegate {
             }
         
             currentPage = targetIndex
+            
+            print(currentPage)
         }
         
         let offset_x = scrollView.mj_offsetX
@@ -643,7 +645,6 @@ extension CFPageScrollView: UIScrollViewDelegate {
             }
         }
     
-        
         //判断滑动刚好一页时，更新数据
         if index == currentPage && index != selectPageIndex {
             

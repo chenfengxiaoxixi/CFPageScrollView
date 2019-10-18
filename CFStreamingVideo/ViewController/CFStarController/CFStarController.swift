@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CFStarController: CFBaseController {
+class CFStarController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

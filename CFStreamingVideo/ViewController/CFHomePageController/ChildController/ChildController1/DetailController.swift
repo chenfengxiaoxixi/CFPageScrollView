@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class DetailController: CFBaseController {
+class DetailController: UIViewController {
 
     var playerView: PlayerView!
     var playerItem: AVPlayerItem!

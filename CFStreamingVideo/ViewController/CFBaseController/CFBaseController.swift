@@ -11,6 +11,7 @@ import UIKit
 class CFBaseController: UIViewController {
 
     var headerColor: UIColor!//视图往下滑动时,头部的遮罩颜色
+    var headFillView: UIView!//视图往下滑动时,头部的遮罩视图
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,11 @@ class CFBaseController: UIViewController {
         
         view.backgroundColor = UIColor.white
         
+        //ScrollView类型的视图拉伸时头部填充视图
+        headFillView = UIView.init(frame: CGRect(x: 0, y: 0, width: view.mj_w, height: 0.01))
+        headFillView.backgroundColor = headerColor
+        view.addSubview(headFillView)
+    
     }
     
 
@@ -32,4 +38,18 @@ class CFBaseController: UIViewController {
     }
     */
 
+}
+
+// MARK: - UIScrollViewDelegate
+extension ChildController1: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let offset = scrollView.contentOffset;
+        print(offset.y);
+ 
+        if offset.y < 0 {
+            headFillView.mj_h = abs(offset.y);
+        }
+    }
 }

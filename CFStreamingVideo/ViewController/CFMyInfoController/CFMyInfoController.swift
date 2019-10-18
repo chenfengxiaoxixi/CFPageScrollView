@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CFMyInfoController: CFBaseController {
+class CFMyInfoController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

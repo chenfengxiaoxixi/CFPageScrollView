@@ -11,7 +11,6 @@ import UIKit
 class HotspotChildController1: CFBaseController {
 
     var tableView: UITableView!
-    var headFillView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +28,7 @@ class HotspotChildController1: CFBaseController {
             tableView.contentInsetAdjustmentBehavior = .never
         }
         
-        headFillView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.mj_w, height: 0.01))
-        headFillView.backgroundColor = headerColor
-        tableView.addSubview(headFillView)
+        self.headFillView.bringSubviewToFront(tableView)
         
     }
     
@@ -77,18 +74,3 @@ extension HotspotChildController1: UITableViewDataSource {
     }
 }
 
-// MARK: - UIScrollViewDelegate
-extension HotspotChildController1: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let offset = scrollView.contentOffset;
-        print(offset.y);
- 
-        if offset.y < 0 {
-            headFillView.mj_y = offset.y;
-            headFillView.mj_h = abs(offset.y);
-        }
-    }
-    
-}

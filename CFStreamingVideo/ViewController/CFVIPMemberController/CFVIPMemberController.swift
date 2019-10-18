@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CFVIPMemberController: CFBaseController {
+class CFVIPMemberController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

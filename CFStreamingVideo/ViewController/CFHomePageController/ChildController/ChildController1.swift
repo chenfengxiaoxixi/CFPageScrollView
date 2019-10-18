@@ -11,7 +11,6 @@ import UIKit
 class ChildController1: CFBaseController {
 
     var collectionView: UICollectionView!
-    var headFillView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +42,9 @@ class ChildController1: CFBaseController {
             collectionView.contentInsetAdjustmentBehavior = .never
         }
         
-        //collectionView拉伸时头部填充视图
-        headFillView = UIView.init(frame: CGRect(x: 0, y: 0, width: collectionView.mj_w, height: 0.01))
-        headFillView.backgroundColor = headerColor
-        collectionView.addSubview(headFillView)
         
+        view.bringSubviewToFront(self.headFillView)
+
     }
 
     /*
@@ -162,18 +159,3 @@ extension ChildController1: UICollectionViewDelegateFlowLayout {
     
 }
 
-// MARK: - UIScrollViewDelegate
-extension ChildController1: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let offset = scrollView.contentOffset;
-        print(offset.y);
- 
-        if offset.y < 0 {
-            headFillView.mj_y = offset.y;
-            headFillView.mj_h = abs(offset.y);
-        }
-    }
-    
-}
