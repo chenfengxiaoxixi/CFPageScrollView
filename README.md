@@ -8,6 +8,7 @@
 
 ![演示图1](https://github.com/chenfengxiaoxixi/CFPageScrollView/blob/master/演示图/演示图1.gif)
 ![演示图2](https://github.com/chenfengxiaoxixi/CFPageScrollView/blob/master/演示图/演示图2.gif)
+![演示图3](https://github.com/chenfengxiaoxixi/CFPageScrollView/blob/master/演示图/演示图3.gif)
 
 使用：
 
