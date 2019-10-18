@@ -290,9 +290,9 @@ extension CFHomePageController: PageScrollViewDataSource {
 
         if index == 0 {
 
-            return [backgroundColorKey: ThemeBlackColor,
-                    norTextColorKey: ThemeGrayWhiteColor,
-                    selTextColorKey: ThemeBlueColor]
+            return [backgroundColorKey: ThemeBlackColor, //顶部背景色
+                    norTextColorKey: ThemeGrayWhiteColor, //字体和底部标记正常颜色
+                    selTextColorKey: ThemeBlueColor] //字体和底部标记选中颜色
         }
         else if index == 1 {
 
