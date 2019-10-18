@@ -42,7 +42,7 @@ class ChildController1: CFBaseController {
             collectionView.contentInsetAdjustmentBehavior = .never
         }
         
-        
+        //确保头部遮罩，位于最上层
         view.bringSubviewToFront(self.headFillView)
 
     }
