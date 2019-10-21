@@ -286,6 +286,7 @@ extension CFHomePageController: PageScrollViewDataSource {
         return pageData
     }
     
+    //头部主体颜色
     func getNavHeaderThemeColorWith(_ index: Int) -> Dictionary<String, UIColor> {
 
         if index == 0 {
@@ -312,17 +313,24 @@ extension CFHomePageController: PageScrollViewDataSource {
     func getSearchViewWith(_ index: Int) -> BaseSearchView {
         
         if index == 0 {
+            //采用的默认searchview主题的颜色
             let view: BaseSearchView = pageView.reuseSearchViewWith(classString: "SearchView", identifier: "view1") as! BaseSearchView
             view.searchButtonTransitionAnimation(preWidth: preWidth)
             view.searchButton.addTarget(self, action: #selector(displaySearchController), for: .touchUpInside)
             preWidth = view.searchButton.mj_w
             return view
         }
+        //自定义searchview主题的颜色
         else if index == 1 {
+            
             let view: BaseSearchView = pageView.reuseSearchViewWith(classString: "SearchView2", identifier: "view2") as! BaseSearchView
             view.searchButtonTransitionAnimation(preWidth: preWidth)
             view.searchButton.addTarget(self, action: #selector(displaySearchController), for: .touchUpInside)
             preWidth = view.searchButton.mj_w
+            view.textColor = RGB(r: 240.0, g: 195.0, b: 152.0, a: 1.0)
+            view.bgColor = RGB(r: 200.0, g: 40.0, b: 37.0, a: 1.0)
+            view.imageColor = RGB(r: 240.0, g: 195.0, b: 152.0, a: 1.0)
+            view.updateThemeColor()
             return view
         }
         else
@@ -331,6 +339,11 @@ extension CFHomePageController: PageScrollViewDataSource {
             view.searchButtonTransitionAnimation(preWidth: preWidth)
             view.searchButton.addTarget(self, action: #selector(displaySearchController), for: .touchUpInside)
             preWidth = view.searchButton.mj_w
+            view.textColor = RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0)
+            view.bgColor = RGB(r: 216.0, g: 218.0, b: 226.0, a: 1.0)
+            view.imageColor = RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0)
+            view.updateThemeColor()
+            
             return view
         }
         

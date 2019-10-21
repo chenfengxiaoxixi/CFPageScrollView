@@ -17,11 +17,11 @@ class SearchView3: BaseSearchView {
         searchButton.frame = CGRect(x: 15, y: 5, width: SCREEN_WIDTH - 30 - 160, height: 50 - 16)
         //        searchButton.addTarget(self, action: #selector(deleteAction(sender:)), for: .touchUpInside)
         //searchButton.setImage(UIImage(named: "delete"), for: .normal)
-        searchButton.backgroundColor = RGB(r: 216.0, g: 218.0, b: 226.0, a: 1.0)
+        searchButton.backgroundColor = bgColor
         searchButton.layer.masksToBounds = true
         searchButton.layer.cornerRadius = 17;
         searchButton.setTitle("天行九歌", for: .normal)
-        searchButton.setTitleColor(RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0), for: .normal)
+        searchButton.setTitleColor(textColor, for: .normal)
         addSubview(searchButton)
         
         var image = UIImage.init(named: "home_icon_search_white_30x30_")
@@ -29,27 +29,27 @@ class SearchView3: BaseSearchView {
         
         searchImage = UIImageView.init(frame: CGRect(x: searchButton.mj_w - 40, y: 2, width: 30, height: 30))
         searchImage.image = image
-        searchImage.tintColor = RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0)
+        searchImage.tintColor = imageColor
         searchButton.addSubview(searchImage)
         
         let btnView = UIView.init(frame: CGRect(x: searchButton.frame.maxX + 10, y: 5, width: 150, height: 50 - 16))
         btnView.layer.masksToBounds = true
         btnView.layer.cornerRadius = 17;
-        btnView.backgroundColor = RGB(r: 218.0, g: 219.0, b: 227.0, a: 1.0)
+        btnView.backgroundColor = bgColor
         addSubview(btnView)
         
         let btn1 = UIButton(type: .custom)
         btn1.frame = CGRect(x: 15, y: 2, width: 30, height: 30)
         btn1.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn1.setTitle("古装", for: .normal)
-        btn1.setTitleColor(RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0), for: .normal)
+        btn1.setTitleColor(textColor, for: .normal)
         btnView.addSubview(btn1)
 
         let btn2 = UIButton(type: .custom)
         btn2.frame = CGRect(x: btn1.frame.maxX + 10, y: 2, width: 30, height: 30)
         btn2.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn2.setTitle("偶像", for: .normal)
-        btn2.setTitleColor(RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0), for: .normal)
+        btn2.setTitleColor(textColor, for: .normal)
         btnView.addSubview(btn2)
         
         var image2 = UIImage.init(named: "home_topbar_icon_filter_light_11x11_")
@@ -60,8 +60,8 @@ class SearchView3: BaseSearchView {
         btn3.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn3.setTitle("全部", for: .normal)
         btn3.setImage(image2, for: .normal)
-        btn3.tintColor = RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0)
-        btn3.setTitleColor(RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0), for: .normal)
+        btn3.tintColor = imageColor
+        btn3.setTitleColor(textColor, for: .normal)
         //btn3.imageView?.tintColor = RGB(r: 62.0, g: 86.0, b: 127.0, a: 1.0)
         btnView.addSubview(btn3)
 

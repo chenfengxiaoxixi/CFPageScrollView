@@ -36,7 +36,7 @@ class CFTabBarController: UITabBarController,UITabBarControllerDelegate {
         {
        child.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:ThemeBlueColor], for: .selected)
         }
-        
+
     child.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.black], for: .normal)
         
         let nav = UINavigationController(rootViewController: child)

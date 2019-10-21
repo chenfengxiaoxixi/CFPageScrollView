@@ -15,11 +15,11 @@ class SearchView2: BaseSearchView {
         
         searchButton = UIButton(type: .custom)
         searchButton.frame = CGRect(x: 15, y: 5, width: SCREEN_WIDTH - 30, height: 50 - 16)
-        searchButton.backgroundColor = RGB(r: 200.0, g: 40.0, b: 37.0, a: 1.0)
+        searchButton.backgroundColor = bgColor
         searchButton.layer.masksToBounds = true
         searchButton.layer.cornerRadius = 17
         searchButton.setTitle("秦时明月之谁是惊鲵", for: .normal)
-        searchButton.setTitleColor(RGB(r: 240.0, g: 195.0, b: 152.0, a: 1.0), for: .normal)
+        searchButton.setTitleColor(textColor, for: .normal)
         addSubview(searchButton)
         
         var image = UIImage.init(named: "home_icon_search_white_30x30_")
@@ -27,7 +27,7 @@ class SearchView2: BaseSearchView {
         
         searchImage = UIImageView.init(frame: CGRect(x: searchButton.mj_w - 40, y: 2, width: 30, height: 30))
         searchImage.image = image
-        searchImage.tintColor = RGB(r: 240.0, g: 195.0, b: 152.0, a: 1.0)
+        searchImage.tintColor = imageColor
         searchButton.addSubview(searchImage)
         
     }

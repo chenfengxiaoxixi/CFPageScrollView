@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String{
+extension String {
     
     func sizeWithText(font: UIFont, size: CGSize) -> CGSize {
         let attributes = [NSAttributedString.Key.font: font]

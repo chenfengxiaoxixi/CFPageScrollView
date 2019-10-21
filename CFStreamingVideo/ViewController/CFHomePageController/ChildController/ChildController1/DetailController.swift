@@ -22,9 +22,20 @@ class DetailController: UIViewController {
         playerItem.removeObserver(self, forKeyPath: "status")
     }
 
+//    override var shouldAutorotate: Bool {
+//        get {
+//            return true
+//        }
+//    }
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        get {
+//            return .landscapeRight
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         view.backgroundColor = ThemeBlackColor
@@ -118,8 +129,12 @@ class DetailController: UIViewController {
         return result
     }
     
-    /// 旋转
+    //旋转
     func toOrientation(orientation: UIInterfaceOrientation) {
+
+        APPDELEGATE.isForcePortrait = false
+        APPDELEGATE.isForceLandscapeRight = true
+        _ = APPDELEGATE.application(UIApplication.shared, supportedInterfaceOrientationsFor: view.window)
         
         let value = UIInterfaceOrientation.landscapeRight.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
@@ -130,19 +145,6 @@ class DetailController: UIViewController {
         
         playerView.updateUI()
         
-    }
-    
-    /// 获取旋转角度
-    private func getTransformRotationAngle() -> CGAffineTransform {
-        let interfaceOrientation = UIApplication.shared.statusBarOrientation
-        if interfaceOrientation == UIInterfaceOrientation.portrait {
-            return CGAffineTransform.identity
-        } else if interfaceOrientation == UIInterfaceOrientation.landscapeLeft {
-            return CGAffineTransform(rotationAngle: (CGFloat)(Double.pi/2))
-        } else if (interfaceOrientation == UIInterfaceOrientation.landscapeRight) {
-            return CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
-        }
-        return CGAffineTransform.identity
     }
     
     /*
@@ -194,6 +196,10 @@ extension DetailController: PlayerViewDelegate {
             navigationController?.popViewController(animated: true)
         }
         else {
+            //回复正常竖屏
+            APPDELEGATE.isForcePortrait = true
+            APPDELEGATE.isForceLandscapeRight = false
+            _ = APPDELEGATE.application(UIApplication.shared, supportedInterfaceOrientationsFor: view.window)
             
             let value = UIInterfaceOrientation.portrait.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")

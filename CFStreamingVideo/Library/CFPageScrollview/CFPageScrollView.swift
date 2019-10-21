@@ -408,6 +408,9 @@ class CFPageScrollView: UIViewController {
     @objc func showMenu() {
         
         if menuVC != nil {
+            
+            let rootVC = APPDELEGATE.window?.rootViewController
+            rootVC?.view.bringSubviewToFront(menuVC.view)
             menuVC.displayMenu()
         }
         else
@@ -420,6 +423,8 @@ class CFPageScrollView: UIViewController {
             menuVC.didMove(toParent: rootVC)
             menuVC.view.isHidden = false
             rootVC?.view.addSubview(menuVC.view)
+            
+            rootVC?.view.bringSubviewToFront(menuVC.view)
             
             menuVC.finishEditingWithData = {[unowned self] (array: Array<PageDataModel>) in
                 
