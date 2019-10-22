@@ -15,9 +15,6 @@ class CFTabBarController: UITabBarController,UITabBarControllerDelegate {
 
         // Do any additional setup after loading the view.
         
-        //禁用more导航
-        moreNavigationController.isNavigationBarHidden = true
-        
         addChildController(ChildController: CFHomePageController(), Title: "首页", DefaultImage: UIImage(named:"navbar_icon_home_normal_24x24_")!, SelectedImage: UIImage(named:"navbar_icon_home_selected_24x24_")!,index: 0)
         addChildController(ChildController: CFHotspotController(), Title: "热点", DefaultImage: UIImage(named:"navbar_icon_discovery_normal_24x24_")!, SelectedImage: UIImage(named:"navbar_icon_discovery_selected_24x24_")!,index: 1)
         addChildController(ChildController: CFVIPMemberController(), Title: "VIP会员", DefaultImage: UIImage(named:"navbar_icon_vip_normal_24x24_")!, SelectedImage: UIImage(named:"navbar_icon_vip_selected_24x24_")!,index: 2)
