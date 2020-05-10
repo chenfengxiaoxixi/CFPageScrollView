@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,11 +56,22 @@
 		0CF7EB8A234C90BC002F0461 /* DataSourceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7EB89234C90BC002F0461 /* DataSourceFile.swift */; };
 		0CF7EB8D234C94BC002F0461 /* HotspotSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7EB8C234C94BC002F0461 /* HotspotSearchView.swift */; };
 		0CFA39DD23334FE400755EB3 /* EditMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA39DC23334FE400755EB3 /* EditMenuHeader.swift */; };
-		3576CF1E2B067AF7C8502A66 /* Pods_CFStreamingVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06919623B570E38513B58EB9 /* Pods_CFStreamingVideo.framework */; };
+		53BA4D213D3534A313130DA7 /* libPods-CFStreamingVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8B6F9BD172D859DC9D1B06 /* libPods-CFStreamingVideo.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A2B83BE52467D864000C5434 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		06919623B570E38513B58EB9 /* Pods_CFStreamingVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFStreamingVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0935922355712C003F986E /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		0C0CD89C233A0C380053FFCF /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		0C0CD8C1233A24290053FFCF /* DisplayData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisplayData+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -119,7 +130,26 @@
 		0CF7EB8C234C94BC002F0461 /* HotspotSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotSearchView.swift; sourceTree = "<group>"; };
 		0CFA39DC23334FE400755EB3 /* EditMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuHeader.swift; sourceTree = "<group>"; };
 		4D1E422157CA5842C9B115F6 /* Pods-CFStreamingVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFStreamingVideo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CFStreamingVideo/Pods-CFStreamingVideo.debug.xcconfig"; sourceTree = "<group>"; };
+		A2B83BDB2467D30D000C5434 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BE12467D7B8000C5434 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BE62467D883000C5434 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BE82467D922000C5434 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BEA2467D93C000C5434 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BEC2467D98C000C5434 /* RollingNotice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RollingNotice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BEE2467D9A9000C5434 /* SDCycleScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDCycleScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BF02467D9C7000C5434 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BF42467DB82000C5434 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BF62467DB8B000C5434 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BF82467DB94000C5434 /* RollingNotice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RollingNotice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BFA2467DB9A000C5434 /* SDCycleScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDCycleScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BFC2467DBA1000C5434 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83BFE2467DC54000C5434 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83C002467DC5E000C5434 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83C022467DC65000C5434 /* RollingNotice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RollingNotice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83C042467DC6F000C5434 /* SDCycleScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDCycleScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B83C062467DC73000C5434 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0FE6F3FC2C90F02E1F098FD /* Pods-CFStreamingVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFStreamingVideo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CFStreamingVideo/Pods-CFStreamingVideo.release.xcconfig"; sourceTree = "<group>"; };
+		FF8B6F9BD172D859DC9D1B06 /* libPods-CFStreamingVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CFStreamingVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3576CF1E2B067AF7C8502A66 /* Pods_CFStreamingVideo.framework in Frameworks */,
+				53BA4D213D3534A313130DA7 /* libPods-CFStreamingVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +433,25 @@
 		9B27724AF6C8B3197EBCEFA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06919623B570E38513B58EB9 /* Pods_CFStreamingVideo.framework */,
+				A2B83C062467DC73000C5434 /* SDWebImage.framework */,
+				A2B83C042467DC6F000C5434 /* SDCycleScrollView.framework */,
+				A2B83C022467DC65000C5434 /* RollingNotice.framework */,
+				A2B83C002467DC5E000C5434 /* MJRefresh.framework */,
+				A2B83BFE2467DC54000C5434 /* MJExtension.framework */,
+				A2B83BFC2467DBA1000C5434 /* SDWebImage.framework */,
+				A2B83BFA2467DB9A000C5434 /* SDCycleScrollView.framework */,
+				A2B83BF82467DB94000C5434 /* RollingNotice.framework */,
+				A2B83BF62467DB8B000C5434 /* MJRefresh.framework */,
+				A2B83BF42467DB82000C5434 /* MJExtension.framework */,
+				A2B83BF02467D9C7000C5434 /* SDWebImage.framework */,
+				A2B83BEE2467D9A9000C5434 /* SDCycleScrollView.framework */,
+				A2B83BEC2467D98C000C5434 /* RollingNotice.framework */,
+				A2B83BEA2467D93C000C5434 /* MJRefresh.framework */,
+				A2B83BE82467D922000C5434 /* MJExtension.framework */,
+				A2B83BE62467D883000C5434 /* MJExtension.framework */,
+				A2B83BE12467D7B8000C5434 /* MJExtension.framework */,
+				A2B83BDB2467D30D000C5434 /* MJExtension.framework */,
+				FF8B6F9BD172D859DC9D1B06 /* libPods-CFStreamingVideo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -419,7 +467,8 @@
 				0C67453B230A7C9B008B99B9 /* Sources */,
 				0C67453C230A7C9B008B99B9 /* Frameworks */,
 				0C67453D230A7C9B008B99B9 /* Resources */,
-				C0AC5DBC8150825F56ACDF66 /* [CP] Embed Pods Frameworks */,
+				A2B83BE52467D864000C5434 /* CopyFiles */,
+				B46858323CA990541DD1A8E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -477,36 +526,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C0AC5DBC8150825F56ACDF66 /* [CP] Embed Pods Frameworks */ = {
+		B46858323CA990541DD1A8E6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CFStreamingVideo/Pods-CFStreamingVideo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RollingNotice/RollingNotice.framework",
-				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CFStreamingVideo/Pods-CFStreamingVideo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RollingNotice.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CFStreamingVideo/Pods-CFStreamingVideo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CFStreamingVideo/Pods-CFStreamingVideo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CFStreamingVideo/Pods-CFStreamingVideo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FB1CA5278DEFFB0962975330 /* [CP] Check Pods Manifest.lock */ = {
@@ -725,6 +759,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D1E422157CA5842C9B115F6 /* Pods-CFStreamingVideo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2C8G4647XY;
@@ -735,6 +770,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.CFStreamingVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CFStreamingVideo/swift_oc_briding_Header.h";
@@ -748,6 +784,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C0FE6F3FC2C90F02E1F098FD /* Pods-CFStreamingVideo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2C8G4647XY;
@@ -758,6 +795,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.CFStreamingVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/CFStreamingVideo/swift_oc_briding_Header.h";
